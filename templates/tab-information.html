@@ -1,0 +1,116 @@
+
+  <ion-view view-title="登录" hide-nav-bar="true" hide-tabs="true">
+
+     <style>
+    
+    .divide{border-bottom:0.1rem solid #24b096;color:#24b096;}
+    .underLine{border-bottom:0.01rem solid #9E9E9E;}
+    .overLine{border-top:0.1rem solid #ededed;}
+   .castalia .nav{height:0.6rem; text-align: center; }
+  .castalia ul li{list-style:none;float: left;width:25%;line-height:0.6rem;}
+  
+   
+   .castalia .fixed{width:100%;height:auto;position:relative;}
+   .castalia .each_box{width:100%;position:absolute;display:none;}
+    
+   
+    
+   
+     </style>
+     
+     
+     
+    <ion-header-bar class="item-input-inset">
+	  	 <button class="button-icon ion-ios-arrow-left" ng-click="goback()"></button>
+	  	 <label class="item-input-wrapper" >
+	  	 	
+	  	 	 <input type="text" placeholder="搜索" />
+	  	 	 <i class="icon ion-ios-search placeholder-icon" style="font-size:0.4rem;" ></i>
+	  	 </label>
+	  	 	<button class="button-icon ion-ios-film-outline"></button>
+	  </ion-header-bar>
+	  
+	   <ion-content>
+         <!--<!--下拉刷新-->
+	  	<!--<ion-refresher on-refresh="doRefresh()" pulling-text="刷新加载"></ion-refresher>-->
+	  	
+        <div class="castalia">
+      	<ul class="nav">
+      		<li class="divide">综合</li>
+      		<li>销量</li>
+      		<li>新品</li>
+      		<li>价格</li>
+      	</ul>
+      	
+      	<div class="fixed">
+      	   <!-- 第一个切换   家装指南-->
+      		<div class="each_box" style="display:block;">
+      		
+      		<div class="list">
+
+           <div class="item item-thumbnail-left overLine" ng-repeat="synthesize in synthesizeData" ng-click="goDetail()">
+           <img src="{{synthesize.Src}}">
+           <h3 style="white-space:pre-line;">{{synthesize.detail}}</h3>
+              <p>{{synthesize.piece}}</p>
+           <p style="color:red">{{synthesize.priece}}</p>
+           </div>
+
+       </div>
+      			
+     </div>
+      		
+      		
+      	 <!-- 第二个切换   Buy家清单-->	
+      	<div class="each_box">
+      		
+      		<div class="list">
+          
+          <div class="item item-thumbnail-left overLine" ng-repeat="volume in volumeData">
+           <img src="{{volume.Src}}">
+           <h3 style="white-space:pre-line;">{{volume.detail}}</h3>
+              <p>{{volume.piece}}</p>
+           <p style="color:red">{{volume.priece}}</p>
+          </div>
+        </div>
+     </div>
+       	 <!-- 第三个切换   空间案例-->	
+      	<div class="each_box">
+      			
+      	<div class="list">
+      		
+           <div class="item item-thumbnail-left overLine" ng-repeat="product in productData">
+           <img src="{{product.Src}}">
+           <h3 style="white-space:pre-line;">{{product.detail}}</h3>
+              <p>{{product.piece}}</p>
+           <p style="color:red">{{product.priece}}</p>
+          </div>
+          
+         </div>
+     
+      </div>
+      			
+   
+         <!-- 第四个切换   生活家-->	
+      <div class="each_box">
+      		
+      	 <div class="list">
+           <div class="item item-thumbnail-left overLine" ng-repeat="priece in prieceData">
+           <img src="{{priece.Src}}">
+           <h3 style="white-space:pre-line;">{{priece.detail}}</h3>
+              <p>{{priece.piece}}</p>
+           <p style="color:red">{{priece.priece}}</p>
+          </div>
+         </div>
+
+      </div>
+      
+      </div>
+      
+    </div>
+      
+       <!--上拉加载-->
+<!--    	  
+    	  <ion-infinite-scroll on-infinite="loadMore()" distance="1%" ></ion-infinite-scroll>-->
+    
+      </ion-content>
+</ion-view>

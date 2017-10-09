@@ -1,0 +1,164 @@
+
+<ion-view view-title="个人" hide-nav-bar="true">
+	
+	<style>
+		ul li{list-style:none;float: left;}
+	.header_wrap{height:3rem;color:#fff;background:-webkit-linear-gradient(#22e1b6 65%,#2e8370 35%);}	
+	.centered{text-align:center;}	
+	i{font-size:0.4rem;}
+	.header_bar{padding-top:0.45rem;}
+	.header_bar div{width:33%;height:0.7rem;float:left;}
+	 .hurdle{height:0.2rem;background:#eeeeee;}
+	.detail_bar div{width:20%;height:0.94rem;float:left; border-right:0.01rem solid #eeeeee;padding-top:0.1rem;}
+	.project{height:0.65rem;width:100%;border-bottom: 0.01rem solid #eeeeee;padding:0.15rem 0.2rem;}
+	.project img{width:0.4rem;height:0.4rem;float:left;margin-right:0.2rem;}
+	</style>
+	
+	<ion-content>
+		<div class="header_wrap">
+			<div style="height:0.4rem;padding:0.3rem 0.2rem 0 0.2rem;">
+				<span style="font-size:0.25rem;">签到</span>
+				<i class="icon ion-ios-bookmarks-outline" style="float:right;"></i>
+			</div>
+			
+			<div class="row centered">
+				<div class="col" ng-click="jump()">
+					<img src="img/1222.png" style="width:0.7rem;height:0.7rem;vertical-align:middle;margin-left:-0.1rem"/>
+					<span>点击登录</span>
+				</div>
+			</div>
+			
+			<div class="centered header_bar">
+				<div class="" style="border-right:0.02rem solid #fff">
+				  <i class="icon ion-ios-star"></i>
+				  <p>我的收藏</p>
+				  <div class="line"></div>
+				</div>
+				
+				<div class="" style="border-right:0.02rem solid #fff">
+				  <i class="icon ion-ios-paw-outline"></i>
+				  <p>我的足迹</p>
+				</div>
+				
+				<div class="">
+				  <i class="icon ion-android-pin"></i>
+				  <p>收货地址</p>
+			   </div>
+		  </div>
+		</div>
+		<!--我的定单-->
+	
+		<div class="item item-icon-right"style="">
+			<span>我的订单</span>
+			<span class="item-note">查看全部订单</span>
+			<i class="icon ion-ios-arrow-right"> </i>
+		  </div>
+	
+		
+		
+		<!--详情栏-->
+		<div class="centered detail_bar" style="overflow: hidden;">
+			<div>
+			<i class="icon ion-ios-printer-outline"></i>
+			 <p>待付款</p>
+			</div>
+			
+			<div>
+			<i class="icon ion-android-clipboard"></i>
+			 <p>待发货</p>
+			</div>
+			
+			<div>
+			<i class="icon ion-model-s"></i>
+			 <p>待收货</p>
+			</div>
+			
+			<div>
+			<i class="icon ion-ios-flower-outline"></i>
+			 <p>待评价</p>
+			</div>
+			
+			<div style="border:none;">
+			<i class="icon ion-social-yen-outline"></i>
+			 <p>退款/售后</p>
+			</div>
+			
+		</div>
+				 <!--条蓝--> 	
+		        <div class="hurdle"></div>
+		        
+		<!--表单------------------------------------------>
+		 <div class="list_wrap" ng-repeat="itemData in allData">
+              
+              <div class="project" ng-repeat="item in itemData">
+              	<img src="{{item.src}}"/>
+              	<span>{{item.title}}</span>
+              	
+              	<i class="icon ion-ios-arrow-right" style="float:right;"></i>
+              	<span style="float:right;margin-right:0.2rem;">{{item.count}}</span>
+              </div>
+              
+               
+              
+               <!--条蓝--> 	
+		        <div class="hurdle"></div>
+		        
+		     </div>
+		 <!--------------------------------->       
+		        <!--<div class="project">
+              	<img src="img/10001.png"/>
+              	<span>我就</span>
+              	
+              	<i class="icon ion-ios-arrow-right" style="float:right;"></i>
+              	<span style="float:right;margin-right:0.2rem;">6张</span>
+              </div>
+              
+               <div class="project">
+              	<img src="img/10001.png"/>
+              	<span>我就</span>
+              	
+              	<i class="icon ion-ios-arrow-right" style="float:right;"></i>
+              	<span style="float:right;margin-right:0.2rem;">6张</span>
+              </div>
+              
+               <div class="project">
+              	<img src="img/10001.png"/>
+              	<span>我就</span>
+              	
+              	<i class="icon ion-ios-arrow-right" style="float:right;"></i>
+              	<span style="float:right;margin-right:0.2rem;">6张</span>
+              </div>
+              
+               <div class="project">
+              	<img src="img/10001.png"/>
+              	<span>我就</span>
+              	
+              	<i class="icon ion-ios-arrow-right" style="float:right;"></i>
+              	<span style="float:right;margin-right:0.2rem;">6张</span>
+              </div>
+              
+                   <!--条蓝--> 	
+		       <!-- <div class="hurdle"></div>-->
+		 <!--------------------------------->     
+			    <!--<div class="project">
+              	<img src="img/10001.png"/>
+              	<span>我就</span>
+              	
+              	<i class="icon ion-ios-arrow-right" style="float:right;"></i>
+              	<span style="float:right;margin-right:0.2rem;">6张</span>
+              </div>
+              
+                <div class="project">
+              	<img src="img/10001.png"/>
+              	<span>我就</span>
+              	
+              	<i class="icon ion-ios-arrow-right" style="float:right;"></i>
+              	<span style="float:right;margin-right:0.2rem;">6张</span>
+              </div>
+              
+                          <!--条蓝--> 	
+		        <!--<div class="hurdle"></div>
+        </div>-->
+		 
+	</ion-content>
+</ion-view>

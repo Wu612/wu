@@ -1,0 +1,299 @@
+<ion-view view-title="分类" hide-nav-bar="true">
+	
+	  <style type="text/css">
+	  	.centered{text-align: center;}
+	  	.divide{border-bottom:0.05rem solid #24b096;}
+	    .underLine{border-bottom:0.01rem solid #9E9E9E;}
+	    .navigate{height:0.6rem; line-height: 0.6rem;}
+	    .navigate ul li{width:2.35rem;height: 0.6rem; list-style: none;float: left;margin-left:0.16rem;}
+        
+       .nav_wrap{width:20%;height:8rem;float:left;border-right:0.01rem solid #9E9E9E;}
+        .left_line{color:#24b096;border-left:0.05rem solid #24b096;}
+	    .subject li{height:0.35rem;margin-top:0.4rem;}
+	    
+	    .loop_wrap{width:100%;height:auto;padding-top:0.25rem;}
+	    .loop_wrap .loop_box{display: none;}
+	    
+	    
+	    
+	    
+	     .Choose{height:9rem;padding-top:0.2rem;}
+	    .Choose dl{width:1.3rem;float:left;margin-left:0.1rem}
+	    .Choose dl img{width:1.05rem;height:0.45rem;margin-bottom:0.2rem;}
+	    
+	    .loop_wrap .style_box{display: none;}
+	    .style_box .large{width:1.95rem;height:2.6rem;border:0.01rem solid #9E9E9E;float:left;margin-left:0.13rem;margin-bottom:0.2rem;}
+	    .style_box .large img{width:1.90rem;height:1.35rem;margin-bottom:0.2rem;}
+	    
+	    
+	  </style>
+	 <!-- 头部-->
+	  <ion-header-bar class="item-input-inset">
+	  	 	<button class="button-icon ion-ios-arrow-left" ng-click="goback()"></button>
+	  	 <label class="item-input-wrapper" style="border-radius:0.2rem;">
+	  	 	<i class="icon ion-ios-search placeholder-icon" style="font-size:0.3rem;position:absolute;left:34%;top:25%;"></i>
+	  	 	 <input type="text" placeholder="输入商品" style="text-align:center; position:relative;" />
+	  	 </label>
+	  	 	<button class="button-icon ion-ios-bookmarks-outline"></button>
+	  </ion-header-bar>
+	 
+	<!--  导航部分-->
+	  <div class="navigate centered underLine">
+	     <ul>
+	  	 	<li ng-class="{divide:isActive}" ng-click="taxonomy()">分类</li>
+	  	 	<li ng-class="{divide:isAdd}" ng-click="stylize()">风格</li>
+	  	 </ul>
+	  </div>
+	   
+      <!--导航栏-->
+      <!--   第一个隐藏与切换-->
+       <div class="classify_wrap" ng-show="classify">
+       	<div class="nav_wrap">
+       		<ul class="centered subject">
+       			<li class="left_line" style="margin-top:0.25rem;">爆款推荐</li>
+       			<li>卧室</li>
+       			<li>客厅</li>
+       			<li>餐厅</li>
+       			<li>书房</li>
+       			<li>儿童房</li>
+       		</ul>
+       	</div>
+   
+         
+     <!-- 可以滚动区-->
+      <div class="roll_wrap" style="float:left;width:80%;">
+      	
+      
+      <ion-scroll>
+      	
+      	   <div class="loop_wrap">
+      	   	  <!--一个-->
+      	   	 <div class="loop_box" style="display:block;">
+      	   	 <div style="width:4.0rem;height:1.45rem;margin-left:0.15rem;">
+     	 	 	<img src="img/261.png" width="100%" height="auto"/>
+     	 	 </div>
+      	
+      	    <div class="row">
+     	 		<div class="col">爆款推荐</div>
+     	 		<div class="col" style="text-align:right; color:#24b096;">查看全部<i class="icon ion-ios-arrow-right"></i></div>
+     	 	</div> 
+     	 	
+     	 	<!--选取区-->
+     	 	
+     	 	 <div class="Choose">
+     	 	 	<dl class="centered" ng-repeat="promote in promoteData">
+     	 	 		<dt><img src="{{promote.Src}}"/></dt>
+     	 	 		<dd>{{promote.name}}</dd>
+     	 	 	</dl>    	 	
+     	 	 </div>
+     	 	 
+     	 	</div>
+     	 	 <!--二个-->
+     	 	 <div class="loop_box">
+      	   	 <div style="width:4.0rem;height:1.45rem;margin-left:0.15rem;">
+     	 	 	<img src="img/262.png" width="100%" height="auto"/>
+     	 	 </div>
+      	
+      	  <div class="row">
+     	 		<div class="col">卧室</div>
+     	 		<div class="col" style="text-align:right;color:#24b096">查看全部<i class="icon ion-ios-arrow-right"></i></div>
+     	 	</div> 
+     	 	
+     	 	<!--选取区-->
+     	 	
+     	 	 <div class="Choose">
+     	 	 	<dl class="centered" ng-repeat="bedroom in bedroomData">
+     	 	 		<dt><img src="{{bedroom.Src}}"/></dt>
+     	 	 		<dd>{{bedroom.name}}</dd>
+     	 	 	</dl>    	 	
+     	 	 </div>
+     	 	</div>
+     	 	<!--三个-->
+     	 	
+     	 	 <div class="loop_box">
+      	   	 <div style="width:4.0rem;height:1.45rem;margin-left:0.15rem;">
+     	 	 	<img src="img/263.png" width="100%" height="auto"/>
+     	 	 </div>
+      	
+      	  <div class="row">
+     	 		<div class="col">客厅</div>
+     	 		<div class="col" style="text-align:right;color:#24b096">查看全部<i class="icon ion-ios-arrow-right"></i></div>
+     	 	</div> 
+     	 	
+     	 	<!--选取区-->
+     	 	
+     	 	 <div class="Choose">
+     	 	 	<dl class="centered" ng-repeat="living in livingData">
+     	 	 		<dt><img src="{{living.Src}}"/></dt>
+     	 	 		<dd>{{living.name}}</dd>
+     	 	 	</dl>    	 	
+     	 	 </div>
+     	 	</div>
+     	 	<!--四个-->
+     	 	 <div class="loop_box">
+      	   	 <div style="width:4.0rem;height:1.45rem;margin-left:0.15rem;">
+     	 	 	<img src="img/264.png" width="100%" height="auto"/>
+     	 	 </div>
+      	
+      	  <div class="row" >
+     	 		<div class="col">餐厅</div>
+     	 		<div class="col" style="text-align:right;color:#24b096">查看全部<i class="icon ion-ios-arrow-right"></i></div>
+     	 	</div> 
+     	 	
+     	 	<!--选取区-->
+     	 	
+     	 	 <div class="Choose">
+     	 	 	<dl class="centered" ng-repeat="dining in diningData">
+     	 	 		<dt><img src="{{dining.Src}}"/></dt>
+     	 	 		<dd>{{dining.name}}</dd>
+     	 	 	</dl>    	 	
+     	 	 </div>
+     	 	</div>
+     	 	<!--五个-->
+     	 	 <div class="loop_box">
+      	   	 <div style="width:4.0rem;height:1.45rem;margin-left:0.15rem;">
+     	 	 	<img src="img/265.png" width="100%" height="auto"/>
+     	 	 </div>
+      	
+      	  <div class="row">
+     	 		<div class="col">书房</div>
+     	 		<div class="col" style="text-align:right;color:#24b096">查看全部<i class="icon ion-ios-arrow-right"></i></div>
+     	 	</div> 
+     	 	
+     	 	<!--选取区-->
+     	 	
+     	 	 <div class="Choose">
+     	 	 	<dl class="centered" ng-repeat="study in studyData">
+     	 	 		<dt><img src="{{study.Src}}"/></dt>
+     	 	 		<dd>{{study.name}}</dd>
+     	 	 	</dl>    	 	
+     	 	 </div>
+     	 	</div>
+     	 	<!--六个-->
+     	 	 <div class="loop_box">
+      	   	 <div style="width:4.0rem;height:1.45rem;margin-left:0.15rem;">
+     	 	 	<img src="img/266.png" width="100%" height="auto"/>
+     	 	 </div>
+      	
+      	  <div class="row">
+     	 		<div class="col">儿童房</div>
+     	 		<div class="col" style="text-align:right;color:#24b096">查看全部<i class="icon ion-ios-arrow-right"></i></div>
+     	 	</div> 
+     	 	
+     	 	<!--选取区-->
+     	 	
+     	 	 <div class="Choose">
+     	 	 	<dl class="centered" ng-repeat="kids_room in kids_roomData">
+     	 	 		<dt><img src="{{kids_room.Src}}"/></dt>
+     	 	 		<dd>{{kids_room.name}}</dd>
+     	 	 	</dl>    	 	
+     	 	 </div>
+     	 	</div>
+     	 	
+      	 </div>
+     	 	
+     	</ion-scroll>
+     	
+     	</div>
+       </div>
+       
+       <!--   第二个隐藏与切换--> 
+       <div class="classify_wrap" ng-show="manner">
+       	<div class="nav_wrap">
+       		<ul class="centered subject ">
+       			<li class="left_line" style="margin-top:0.25rem;">现代</li>
+       			<li>北欧</li>
+       			<li>欧式</li>
+       			<li>中式</li>
+       			<li>韩式</li>
+       			<li>乡村</li>
+       			<li>美式</li>
+       			<li>儿童</li>
+       		</ul>
+       	</div>
+   
+         
+     <!-- 可以滚动区-->
+     <div class="roll_wrap" style="float:left;width:80%;">
+      <ion-scroll>
+        	
+     	 	<!--选取区-->
+     	 <div class="loop_wrap">
+     	 	<!--  第一个       现代-->
+     	 	 <div class="style_box" style="display:block;">
+     	 	    <dl class="large centered" ng-repeat="modern in modernData">
+     	 	 		<dt><img src="{{modern.Src}}"/></dt>
+     	 	 		<dd><b>{{modern.epilog}}</b></dd>
+     	 	 		<dd style="font-size:0.12rem;">{{modern.comfort}}</dd>
+     	 	 	</dl>  
+     	 	 </div>
+     	 	 
+     	 	 <!--  第二个       北欧-->
+     	 	 <div class="style_box" >
+     	 	    <dl class="large centered" ng-repeat="Northern in NorthernData">
+     	 	 		<dt><img src="{{Northern.Src}}"/></dt>
+     	 	 		<dd><b>{{Northern.epilog}}</b></dd>
+     	 	 		<dd style="font-size:0.12rem;">{{Northern.comfort}}</dd>
+     	 	 	</dl>  
+     	 	 </div>
+     	 	 
+     	 	 <!--  第三个       欧式-->
+     	 	 <div class="style_box">
+     	 	    <dl class="large centered" ng-repeat="European in EuropeanData">
+     	 	 		<dt><img src="{{European.Src}}"/></dt>
+     	 	 		<dd><b>{{European.epilog}}</b></dd>
+     	 	 		<dd style="font-size:0.12rem;">{{European.comfort}}</dd>
+     	 	 	</dl>  
+     	 	 </div>
+     	 	 
+     	 	 <!--  第四个       中式-->
+     	 	 <div class="style_box">
+     	 	    <dl class="large centered" ng-repeat="Chinese in ChineseData">
+     	 	 		<dt><img src="{{Chinese.Src}}"/></dt>
+     	 	 		<dd><b>{{Chinese.epilog}}</b></dd>
+     	 	 		<dd style="font-size:0.12rem;">{{Chinese.comfort}}</dd>
+     	 	 	</dl>  
+     	 	 </div>
+     	 	 
+     	 	 <!--  第伍个       韩式-->
+     	 	 <div class="style_box">
+     	 	    <dl class="large centered" ng-repeat="Korean in KoreanData">
+     	 	 		<dt><img src="{{Korean.Src}}"/></dt>
+     	 	 		<dd><b>{{Korean.epilog}}</b></dd>
+     	 	 		<dd style="font-size:0.12rem;">{{Korean.comfort}}</dd>
+     	 	 	</dl>  
+     	 	 </div>
+     	 	 
+     	 	 <!--  第六个        乡村-->
+     	 	 <div class="style_box">
+     	 	    <dl class="large centered" ng-repeat="country in countryData">
+     	 	 		<dt><img src="{{country.Src}}"/></dt>
+     	 	 		<dd><b>{{country.epilog}}</b></dd>
+     	 	 		<dd style="font-size:0.12rem;">{{country.comfort}}</dd>
+     	 	 	</dl>  
+     	 	 </div>
+     	 	 
+     	 	 <!--  第七个       美式-->
+     	 	 <div class="style_box">
+     	 	    <dl class="large centered" ng-repeat="American in AmericanData">
+     	 	 		<dt><img src="{{American.Src}}"/></dt>
+     	 	 		<dd><b>{{American.epilog}}</b></dd>
+     	 	 		<dd style="font-size:0.12rem;">{{American.comfort}}</dd>
+     	 	 	</dl>  
+     	 	 </div>
+     	 	 
+     	 	  <!--  第八个        儿童-->
+     	 	 <div class="style_box">
+     	 	    <dl class="large centered" ng-repeat="child in childData">
+     	 	 		<dt><img src="{{child.Src}}"/></dt>
+     	 	 		<dd><b>{{child.epilog}}</b></dd>
+     	 	 		<dd style="font-size:0.12rem;">{{child.comfort}}</dd>
+     	 	 	</dl>  
+     	 	 </div>
+     	 	 
+     	 	</div> 	
+     	 	
+     	</ion-scroll>
+       </div>
+       </div>
+ </ion-view>
